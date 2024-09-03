@@ -22,6 +22,30 @@
     --static14: rgba(0, 0, 0, 0.2);
     --static15: rgba(255, 255, 255, 0.5);
 }
+
+.container {
+    width: 100%;
+    height: 100%;
+    --s: 250px; 
+    --c1: var(--primary);
+    --c2: var(--secondary);
+    --c3: var(--accent);
+    filter: blur(8px);
+  
+    background: repeating-conic-gradient(
+          from 30deg,
+          #0000 0 120deg,
+          var(--c3) 0 180deg
+        )
+        calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+      repeating-conic-gradient(
+        from 30deg,
+        var(--c1) 0 60deg,
+        var(--c2) 0 120deg,
+        var(--c3) 0 180deg
+      );
+    background-size: var(--s) calc(var(--s) * 0.577);
+} 
   
 
 /* body {
@@ -52,8 +76,7 @@ header {
 
 .logo {
     display: flex;
-    margin: 15px 0px 15px 15px;
-    
+    margin: 15px 0px 15px 3rem;
 }
 
 .logo img {
@@ -65,6 +88,7 @@ header {
     display: flex;
     flex-direction: row;
     /* padding: 10px; */
+    /* margin-right: 3rem; */
 }
 
 /* .pages div {
@@ -78,7 +102,7 @@ header {
 }
 
 div.pages div{
-    padding: 28px 15px;
+    padding: 28px 25px;
 }
 
 /* .pages div {
@@ -120,17 +144,52 @@ main {
     padding: 2rem;
 }
 
+main::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .leftcolumn, .rightcolumn { 
     flex: 1; /* Allow columns to grow and fill available space */
 }
 
 section {
+    position: relative;
+    padding: 1.5rem;
     margin: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Sharp, subtle border */
+    border-radius: 12px; /* Smooth corners for a modern look */
+    overflow: hidden; /* Ensure the pseudo-element is contained */
+    backdrop-filter: blur(8px); /* Apply a blur effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a modern shadow */
+    z-index: 1;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(15px); /* Apply a heavier blur to the background */
+    z-index: -1;
+    opacity: 0.8; /* Slight transparency to enhance the blur */
+}
+
+section h2, section p {
+    position: relative; /* Ensure text is above the pseudo-element */
+    z-index: 2; /* Place the content above everything else */
 }
 
 .main-content {
     width: 65%;
 }
+
+
 
 /* .sidebar {
     width: 30%;
@@ -181,6 +240,17 @@ p {
 
 }
 
+@media screen and (min-width: 1980px) {
+    body {
+        max-width: 1980px;
+        margin: auto;
+    }
+
+    footer { 
+        max-width: 1980px;
+    }
+}
+
 @media screen and (max-width: 800px) {
     main {
         flex-direction: column;
@@ -196,18 +266,12 @@ p {
     }
 }
 
-@media screen and (max-width: 400px) {
+/* @media screen and (max-width: 400px) {
     .topnav a {
         float: none;
         width: 100%;
     }
-}
-
-main::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+} */
 
 
 
