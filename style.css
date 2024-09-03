@@ -156,40 +156,42 @@ main::after {
 
 section {
     position: relative;
-    padding: 1.5rem;
+    padding: 2rem;
     margin: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Sharp, subtle border */
-    border-radius: 12px; /* Smooth corners for a modern look */
-    overflow: hidden; /* Ensure the pseudo-element is contained */
-    backdrop-filter: blur(8px); /* Apply a blur effect */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a modern shadow */
-    z-index: 1;
+    background: rgba(255, 255, 255, 0.1); /* Light frosted glass effect */
+    border-radius: 16px; /* Smooth rounded corners */
+    backdrop-filter: blur(10px); /* Stronger blur for a frosted glass look */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Thin, light border */
+    overflow: hidden; /* Ensure no overflow outside the section */
 }
 
-section::before {
-    content: "";
+section h2 {
+    color: #ffffff; /* White color for headings */
+    font-size: 1.5rem; /* Adjust the size to fit the design */
+    margin-bottom: 1rem;
+}
+
+section p {
+    color: rgba(255, 255, 255, 0.85); /* Light grey for the paragraph text */
+    line-height: 1.6; /* Increase line height for better readability */
+}
+
+.highlight {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    filter: blur(15px); /* Apply a heavier blur to the background */
-    z-index: -1;
-    opacity: 0.8; /* Slight transparency to enhance the blur */
-}
-
-section h2, section p {
-    position: relative; /* Ensure text is above the pseudo-element */
-    z-index: 2; /* Place the content above everything else */
+    top: 60px; 
+    left: -30px; /* Adjust this value for horizontal positioning */
+    background-color: rgba(255, 0, 0, 1); /* Bright red background for emphasis */
+    color: #ffffff; /* White text on the highlight */
+    padding: 0.5rem 1rem; /* Add padding for better spacing */
+    border-radius: 8px; /* Rounded corners for the highlight */
+    font-weight: bold; /* Bold font for emphasis */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
 }
 
 .main-content {
     width: 65%;
 }
-
-
 
 /* .sidebar {
     width: 30%;
@@ -273,5 +275,31 @@ p {
     }
 } */
 
-
+/* From Uiverse.io by Yaya12085 */ 
+.button {
+    display: flex;
+    background-color: rgb(24, 23, 23);
+    color: #ffffff;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    align-items: center;
+    border-radius: 0.5rem;
+    gap: 0.75rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: .6s ease;
+  }
+  
+  .button svg {
+    height: 30px;
+  }
+  
+  .button:hover {
+    box-shadow: none;
+  }
 
