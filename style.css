@@ -77,12 +77,19 @@ header {
 
 .logo {
     display: flex;
+    text-align: center;
     margin: 15px 0px 15px 3rem;
 }
 
 .logo img {
     border-radius: 50%;
     width: 50px;
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    margin: auto;
+    margin-left: 1rem;
 }
 
 .pages {
