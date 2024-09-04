@@ -98,6 +98,7 @@ header {
     margin-right: 3rem;
     /* padding: 10px; */
     /* margin-right: 3rem; */
+    border-right: 1px solid var(--static7);
 }
 
 /* .pages div {
@@ -110,15 +111,38 @@ header {
     color: var(--text);
 }
 
-.nav{
+.nav {
     padding: 28px 18px;
     text-decoration: none;
     color: #ffffff; 
     font-size: 1.1rem; 
     font-weight: 600;
+
     position: relative;
+    border-left: 1px solid var(--static7);
     display: inline-block;
+    z-index: 1; /* Ensure the text stays above the background */
+
+    /* Background Transition */
+    overflow: hidden;
 }
+
+.nav::before {
+    content: "";
+    position: absolute;
+    top: 100%; /* Start the background off-screen (bottom) */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--static4); /* Background color */
+    z-index: -1; /* Place the background behind the text */
+    transition: top 0.4s ease; /* Transition for sliding effect */
+}
+
+.nav:hover::before {
+    top: 0; /* Slide the background up to fully cover the nav item */
+}
+
 
 /* .pages div {
     display: flex;
@@ -284,12 +308,17 @@ p {
     }
 }
 
-/* @media screen and (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .topnav a {
         float: none;
         width: 100%;
     }
-} */
+
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+}
 
 /* From Uiverse.io by Yaya12085 */ 
 .GitHub {
