@@ -23,6 +23,12 @@
     --static15: rgba(255, 255, 255, 0.5);
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 /* .container {
     width: 100%;
     height: 100%;
@@ -68,6 +74,10 @@ header {
     background-color: var(--background);
     border-bottom: 1px solid var(--static7);
     font-weight: bold;
+
+    position: sticky;
+  top: 0;
+  z-index: 1000; /* High value to ensure it's above other elements */
 }
 
 .navbar div div:hover {
@@ -296,7 +306,8 @@ p {
 @media screen and (max-width: 990px) {
     .logo {
         align-items: center;
-        margin-left: 1rem;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .logo img {
