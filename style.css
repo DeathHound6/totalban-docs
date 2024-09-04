@@ -277,7 +277,6 @@ footer p {
     font-size: 14px;
 }
 
-
 h1, h2, h3 {
     margin: 0 0 1rem 0;
 }
@@ -340,6 +339,10 @@ p {
 
     .rightcolumn {
         margin-top: 1rem; /* Add some spacing between stacked elements */
+    }
+
+    footer {
+        position: static;
     }
 }
 
