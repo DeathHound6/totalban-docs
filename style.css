@@ -47,8 +47,8 @@ header {
     font-weight: bold;
 
     position: sticky;
-  top: 0;
-  z-index: 1000; /* High value to ensure it's above other elements */
+    top: 0;
+    z-index: 1000; /* High value to ensure it's above other elements */
 }
 
 .logo {
@@ -366,9 +366,9 @@ section.changelog {
 .button-container {
     display: flex;
     justify-content: flex-end; /* Aligns the button to the right */
-  }
-  
-  .cssbuttons-io {
+}
+
+.cssbuttons-io {
     position: relative;
     margin-top: 1rem;
     font-family: inherit;
@@ -381,47 +381,93 @@ section.changelog {
     background: linear-gradient(to right, #8e2de2, #4a00e0);
     color: ghostwhite;
     overflow: hidden;
-  }
-  
-  .cssbuttons-io svg {
+}
+
+.cssbuttons-io svg {
     width: 2em;
     height: 1em;
     margin-right: 0.2em;
-  }
-  
-  .cssbuttons-io span {
+}
+
+.cssbuttons-io span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
     display: inline-flex;
     align-items: center;
     padding: 0.5em 1em 0.5em 1em;
-  }
-  
-  .cssbuttons-io::before,
-  .cssbuttons-io::after {
+}
+
+.cssbuttons-io::before,
+.cssbuttons-io::after {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
-  }
-  
-  .cssbuttons-io::before {
+}
+
+.cssbuttons-io::before {
     content: "";
     background: #000;
     width: 120%;
     left: -10%;
     transform: skew(30deg);
     transition: transform 0.7s cubic-bezier(0.3, 1, 0.8, 1);
-  }
-  
-  .cssbuttons-io:hover::before {
-    transform: translate3d(100%, 0, 0);
-  }
-  
-  .cssbuttons-io:active {
+}
+
+.cssbuttons-io:hover::before {
+    transform: translate3d(100%, 0, 0); 
+}
+
+.cssbuttons-io:active {
     transform: scale(0.95);
-  }
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger-menu span {
+    height: 3px;
+    width: 25px;
+    background-color: var(--text);
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        flex: 1;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .pages {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        border-right: none;
+    }
+
+    .pages.active {
+        display: flex;
+    }
+
+    .nav {
+        padding: 15px;
+        border-left: none;
+        border-top: 1px solid var(--static7);
+    }
+}
   
