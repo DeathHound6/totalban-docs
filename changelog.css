@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --text: hsl(270, 40%, 94%);
+    --background: hsl(270, 46%, 5%);
+    --primary: hsl(267, 52%, 71%);
+    --secondary: hsl(268, 60%, 32%);
+    --accent: hsl(275, 86%, 36%);
+
+
+    --static: rgba(225, 225, 225, 0.5);
+    --static2: #0f0f0f;
+    --static3: rgb(255, 255, 255);
+    --static4: rgba(225, 225, 225, 0.2);
+    --static5: rgb(24, 172, 122);
+    --static6: rgba(0, 0, 0, 0.05);
+    --static7: rgba(105, 96, 79, 0.397);
+    --static8: rgba(0, 0, 0, 0.05);
+    --static9: rgba(0, 0, 0, 0.3);
+    --static10: rgba(225, 225, 225);
+    --static11: rgba(78, 71, 57, 0.473);
+    --static12: rgba(255, 255, 255, 0.8);
+    --static13: rgb(235, 235, 235);
+    --static14: rgba(0, 0, 0, 0.2);
+    --static15: rgba(255, 255, 255, 0.5);
+
+    --card-bg-color: hsl(267, 22%, 10%);
+    --card-hover-bg-color: hsl(273, 15%, 15%);
+
+    --tag-color: hsl(275, 86%, 36%);
+
+    --commit-svg-bg: hsl(267, 22%, 10%);
+}
+
+[data-theme="light"] {
+    --text: hsl(280, 20%, 3%);
+    --background: hsl(260, 27%, 98%);
+    --primary: hsl(272, 64%, 15%);
+    --secondary: hsl(272, 49%, 70%);
+    --accent: hsl(272, 64%, 85%);
+
+    --card-bg-color: rgba(182, 182, 182, 0.2);
+    --card-hover-bg-color: hsl(273, 52%, 78%);
+
+    --tag-color: hsl(272, 49%, 70%);
+
+    --commit-svg-bg: hsl(240, 5%, 93%);
+}
+
+.space-mono-regular {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.space-mono-bold {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.space-mono-regular-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.space-mono-bold-italic {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-style: italic;
+}
+
+main {
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+    padding: 0px;
+    margin: 4rem auto;
+}
+
+.log-card {
+    display: flex;
+    flex-direction: row;
+    background:  var(--card-bg-color);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.log-card:hover {
+    background: var(--card-hover-bg-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    .commit-icon{
+        background-color: var(--card-hover-bg-color);
+    }
+}
+
+.meta {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 2rem;
+    border-right: 1px solid var(--primary);
+    position: relative;
+}
+
+.version {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    font-size: 1rem;
+    color: var(--text);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    display: inline-block;
+    background-color: var(--tag-color);
+    color: var(--text);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* .commit-icon {
+    position: absolute;
+    right: -14px;
+    bottom: 0;
+    background-color: var(--background);
+    border-radius: 50%;
+    padding: 2px;
+    z-index: 1;
+} */
+
+.commit-icon {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    right: -14.5px;
+    top: -2px;
+    background-color: var(--commit-svg-bg);
+    border-radius: 50%;
+    padding: 0px;
+    z-index: 1;
+}
+
+/* .commit-svg {
+    fill: aqua;
+} */
+
+.details {
+    width: 70%;
+    padding-left: 2rem;  
+}
+
+.details p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+/* Responsive Design */
+
+@media screen and (max-width: 800px){
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .commit-icon {
+        left: 0px;
+        top: 90%;
+    }
+
+    .log-card {
+        flex-direction: column;
+    }
+
+    .meta, .details {
+        width: 100%;
+        padding: 0;
+    }
+
+    .meta {
+        border-right: none;
+        border-bottom: 1px solid var(--primary);
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .version {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        width: 95%;
+    }
+
+    .log-card {
+        padding: 1.5rem;
+    }
+
+    .version {
+        font-size: 1.8rem;
+    }
+
+    .date {
+        font-size: 0.9rem;
+    }
+
+    .details p {
+        font-size: 0.9rem;
+    }
+}
