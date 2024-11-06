@@ -1,22 +1,257 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8" />
-        <title>Todo app</title>
+        <title>TotalBan</title>
+        <link rel="icon" type="image/x-icon" href="logo.webp">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="commands.css">
     </head>
     <body>
-        <div class="navbar">
-            <div class="logo">logo</div>
+        <header class="navbar sticky">
+            <div class="logo"><a href="index.html"><img src="logo.webp" alt="TotalBan" class=""></a><h1>TotalBan Documentation</h1></div>
             <div class="pages">
-                <div><a href="index.html">Home</a></div>
-                <div><a href="changelog.html">Change Log</a></div>
-                <div><a href="commands.html">commands</a></div>
-                <div><a href="legal.html">Legal</a></div>
+                <a class="nav" href="index.html">Home</a>
+                <a class="nav" href="changelog.html">Changelog</a>
+                <a class="nav" href="commands.html">Commands</a>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <!-- <a class="nav" href="legal.html">Legal</a> -->
             </div>
-        </div>
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </header>
+        <main class="card-container">
+            <div class="card-container"></div>
+                <div class="card">
+                    <div class="card-content">
+                        <h2>Ban</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/ban <span class="required">&lt;User*&gt; </span><span class="optional">&lt;Reason&gt; </span><span class="optional">&lt;Delete&gt;</span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">Ban a member from the server</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>User</h4><p>(Mention or ID) - The user to ban (required*)</p></span>
+                                <span class="param"><h4>Reason</h4><p>(Text) - The reason to ban the user for (optional)</p></span>
+                                <span class="param"><h4>Delete</h4><p>(Text) - The number of days of the user's messages to delete (optional)</p></span>
+                            <h3>Perms</h3>
+                                <span class="perms">
+                                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="18" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                                        <path d="M30,46V38a20,20,0,0,1,40,0v8a8,8,0,0,1,8,8V74a8,8,0,0,1-8,8H30a8,8,0,0,1-8-8V54A8,8,0,0,1,30,46Zm32-8v8H38V38a12,12,0,0,1,24,0Z" fill-rule="evenodd"></path>
+                                    </svg>
+                                    <p>Ban Members</p>
+                                </span>
+                    </div>
+                    <div class="card-content">
+                        <h2>Check</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/check &lt;ID&gt; </span><span class="optional">&lt;User&gt; </span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">View a global ban for a user or lookup a specific ban</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>ID</h4><p>(Text) - The ban ID (optional. required if user is missing)</p></span>
+                                <span class="param"><h4>User</h4><p>(Mention or ID) - The user to check for (optional. required if id is missing)</p></span>
+                    </div>
+                    <div class="card-content">
+                        <h2>Info</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/info</p>
+                            <h3>Description</h3>
+                                <p class="descrip">View the bot's information</p>
+                    </div>
+                    <div class="card-content">
+                        <h2>Kick</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/kick <span class="required">&lt;User*&gt; </span><span class="optional">&lt;Reason&gt; </span><span class="optional">&lt;Delete&gt;</span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">Kick a member from the server</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>User</h4><p> (Mention or ID) - The user to ban (required*)</p></span>
+                                <span class="param"><h4>Reason</h4><p>(Text) - The reason to ban the user for (optional)</p></span>
+                            <h3>Perms</h3>
+                                <span class="perms">
+                                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="18" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                                        <path d="M30,46V38a20,20,0,0,1,40,0v8a8,8,0,0,1,8,8V74a8,8,0,0,1-8,8H30a8,8,0,0,1-8-8V54A8,8,0,0,1,30,46Zm32-8v8H38V38a12,12,0,0,1,24,0Z" fill-rule="evenodd"></path>
+                                    </svg>
+                                    <p>Kick Members</p>
+                                </span>
+                    </div>
+                    <div class="card-content">
+                        <h2>Purge</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/purge <span class="required">&lt;User*&gt; </span><span class="optional">&lt;Reason&gt; </span><span class="optional">&lt;Delete&gt;</span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">Clear a channel of messages</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>User</h4><p>(Mention or ID) - The user to remove messages for (optional)</p></span>
+                                <span class="param"><h4>Count</h4><p>(Number) - The number of messages to delete (required*. max value 100)</p></span>
+                            <h3>Perms</h3>
+                                <span class="perms">
+                                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="18" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                                        <path d="M30,46V38a20,20,0,0,1,40,0v8a8,8,0,0,1,8,8V74a8,8,0,0,1-8,8H30a8,8,0,0,1-8-8V54A8,8,0,0,1,30,46Zm32-8v8H38V38a12,12,0,0,1,24,0Z" fill-rule="evenodd"></path>
+                                    </svg>
+                                    <p>Manage Messages</p>
+                                </span>
+                    </div>
+                    <div class="card-content">
+                        <h2>Timeout</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/timeout <span class="required">&lt;User*&gt; </span><span class="required">&lt;Time*&gt; </span><span class="optional">&lt;Reason&gt;</span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">Timeout a member</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>User</h4><p>(Mention or ID) - The user to timeout (required*)</p></span>
+                                <span class="param"><h4>Time</h4><p>(Text) - How long to timeout the member for (required*)</p></span>
+                                <span class="param"><h4>Reason</h4><p>(Text) - The reason for the timeout (optional)</p></span>
+                            <h3>Perms</h3>
+                                <span class="perms">
+                                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="18" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                                        <path d="M30,46V38a20,20,0,0,1,40,0v8a8,8,0,0,1,8,8V74a8,8,0,0,1-8,8H30a8,8,0,0,1-8-8V54A8,8,0,0,1,30,46Zm32-8v8H38V38a12,12,0,0,1,24,0Z" fill-rule="evenodd"></path>
+                                    </svg>
+                                    <p>Moderate Members</p>
+                                </span>
+                    </div>
+                    <div class="card-content">
+                        <h2>Unban</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/unban <span class="required">&lt;User*&gt; </span><span class="required">&lt;Time*&gt; </span><span class="optional">&lt;Reason&gt;</span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">Unban a user from the server</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>User</h4><p>(Mention or ID) - The user to unban (required*)</p></span>
+                                <span class="param"><h4>Reason</h4><p>(Text) - The reason to ban the user for (optional)</p></span>
+                            <h3>Perms</h3>
+                                <span class="perms">
+                                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="18" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                                        <path d="M30,46V38a20,20,0,0,1,40,0v8a8,8,0,0,1,8,8V74a8,8,0,0,1-8,8H30a8,8,0,0,1-8-8V54A8,8,0,0,1,30,46Zm32-8v8H38V38a12,12,0,0,1,24,0Z" fill-rule="evenodd"></path>
+                                    </svg>
+                                    <p>Ban Members</p>
+                                </span>
+                    </div>
+                    <div class="card-content">
+                        <h2>Untimeout</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/untimeout <span class="required">&lt;User*&gt; </span><span class="optional">&lt;Reason&gt;</span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">Unban a user from the server</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>User</h4><p>(Mention or ID) - The user to unban (required*)</p></span>
+                                <span class="param"><h4>Reason</h4><p>(Text) - The reason for the untimeout (optional)</p></span>
+                            <h3>Perms</h3>
+                                <span class="perms">
+                                    <svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" width="18" x="0" xmlns="http://www.w3.org/2000/svg" y="0">
+                                        <path d="M30,46V38a20,20,0,0,1,40,0v8a8,8,0,0,1,8,8V74a8,8,0,0,1-8,8H30a8,8,0,0,1-8-8V54A8,8,0,0,1,30,46Zm32-8v8H38V38a12,12,0,0,1,24,0Z" fill-rule="evenodd"></path>
+                                    </svg>
+                                    <p>Moderate Members</p>
+                                </span>
+                    </div>
+                    <div class="card-content">
+                        <h2>Whois</h2>
+                            <h3>Command</h3>
+                                <p class="command space-mono-regular">/whois <span class="optional">&lt;User&gt; </span></p>
+                            <h3>Description</h3>
+                                <p class="descrip">View information about a user or bot</p>
+                            <h3>Parameter Details</h3>
+                                <span class="param"><h4>User</h4><p>(Mention or ID) - The user to view info for (optional)</p></span>
+                    </div>
+                    <div class="card-content" style="border: none;">
+                        <p class="descrip space-mono-regular">And working on more...</p>
+                    </div>
+                    </div> 
+                    <div class="card">
+                        <div class="card-content" style="border: none;"><h2 class="space-mono-bold">Ideas?</h2>
+                            <p class="descrip" >We would love to hear your suggentions!</p>
+                            <a href="https://github.com/DeathHound6/totalban-docs/issues/new">
+                                <button class="issue-link">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7.99992 1.33331C7.12444 1.33331 6.25753 1.50575 5.4487 1.84078C4.63986 2.17581 3.90493 2.66688 3.28587 3.28593C2.03563 4.53618 1.33325 6.23187 1.33325 7.99998C1.33325 10.9466 3.24659 13.4466 5.89325 14.3333C6.22659 14.3866 6.33325 14.18 6.33325 14C6.33325 13.8466 6.33325 13.4266 6.33325 12.8733C4.48659 13.2733 4.09325 11.98 4.09325 11.98C3.78659 11.2066 3.35325 11 3.35325 11C2.74659 10.5866 3.39992 10.6 3.39992 10.6C4.06659 10.6466 4.41992 11.2866 4.41992 11.2866C4.99992 12.3 5.97992 12 6.35992 11.84C6.41992 11.4066 6.59325 11.1133 6.77992 10.9466C5.29992 10.78 3.74659 10.2066 3.74659 7.66665C3.74659 6.92665 3.99992 6.33331 4.43325 5.85998C4.36659 5.69331 4.13325 4.99998 4.49992 4.09998C4.49992 4.09998 5.05992 3.91998 6.33325 4.77998C6.85992 4.63331 7.43325 4.55998 7.99992 4.55998C8.56659 4.55998 9.13992 4.63331 9.66659 4.77998C10.9399 3.91998 11.4999 4.09998 11.4999 4.09998C11.8666 4.99998 11.6333 5.69331 11.5666 5.85998C11.9999 6.33331 12.2533 6.92665 12.2533 7.66665C12.2533 10.2133 10.6933 10.7733 9.20659 10.94C9.44659 11.1466 9.66659 11.5533 9.66659 12.1733C9.66659 13.0666 9.66659 13.7866 9.66659 14C9.66659 14.18 9.77325 14.3933 10.1133 14.3333C12.7599 13.44 14.6666 10.9466 14.6666 7.99998C14.6666 7.1245 14.4941 6.25759 14.1591 5.44876C13.8241 4.63992 13.333 3.90499 12.714 3.28593C12.0949 2.66688 11.36 2.17581 10.5511 1.84078C9.7423 1.50575 8.8754 1.33331 7.99992 1.33331V1.33331Z" fill="currentcolor"></path>
+                                    </svg>
+                                    <span>Create an issue</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.webp" alt="TotalBan Logo" class="footer-img">
+                    <p class="copyright">© 2024 TotalBan. All rights reserved.</p>
+                </div>
+                <nav class="footer-links">
+                    <a href="changelog.html">Changelog</a>
+                    <a href="legal.html">Legal</a>
+                </nav>
+                <div class="social-links">
+                    <a href="https://discord.gg/puzjdKHH35" class="discord-btn" aria-label="Join our Discord">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const burger = document.querySelector('.burger input');
+                const navMenu = document.querySelector('.pages');
+                const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+
+                // Burger menu functionality
+                if (burger && navMenu) {
+                    burger.addEventListener('change', function() {
+                        if (this.checked) {
+                            navMenu.classList.add('active');
+                        } else {
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                } else {
+                    console.error('Burger menu or navigation menu not found');
+                }
+
+                // Theme toggle functionality
+                function switchTheme(e) {
+                    if (e.target.checked) {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                    }
+                }
+
+                // Add event listener for theme toggle switch
+                if (toggleSwitch) {
+                    toggleSwitch.addEventListener('change', switchTheme, true);
+                } else {
+                    console.error('Theme toggle switch not found');
+                }
+
+                // Check for saved theme and apply it
+                const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light';
+                document.documentElement.setAttribute('data-theme', currentTheme);
+
+                // Ensure the switch reflects the correct theme status
+                if (currentTheme === 'dark' && toggleSwitch) {
+                    toggleSwitch.checked = true;
+                } else if (currentTheme === 'light' && toggleSwitch) {
+                    toggleSwitch.checked = false;
+                }
+            });
+        </script>
     </body>
 </html>

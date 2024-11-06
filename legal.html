@@ -1,22 +1,131 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8" />
-        <title>Todo app</title>
+        <title>TotalBan</title>
+        <link rel="icon" type="image/x-icon" href="logo.webp">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="legal.css">
     </head>
     <body>
-        <div class="navbar">
-            <div class="logo">logo</div>
+        <header class="navbar sticky">
+            <div class="logo"><a href="index.html"><img src="logo.webp" alt="TotalBan" class=""></a><h1>TotalBan Documentation</h1></div>
             <div class="pages">
-                <div><a href="index.html">Home</a></div>
-                <div><a href="changelog.html">Change Log</a></div>
-                <div><a href="commands.html">commands</a></div>
-                <div><a href="legal.html">Legal</a></div>
+                <a class="nav" href="index.html">Home</a>
+                <a class="nav" href="changelog.html">Changelog</a>
+                <a class="nav" href="commands.html">Commands</a>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+                <!-- <a class="nav" href="legal.html">Legal</a> -->
             </div>
-        </div>
+            <label class="burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </header>
+        <main>
+            <h1>Privacy Policy</h1>
+                <p>For the duration of the time the bot is in any Guild, we (the bot staff team) reserve the right to generate an invite URL, or use an existing one, for said Guild, for investigation purposes, if the Guild is suspected to be in breach of the Discord Terms of Service and/or Community Guidelines.
+                </p>            
+                <p>Upon the end of the investigation, any invite URLs will be discarded, and no longer be made accessible to us (the bot staff team).
+                </p>
+                    
+            <h1>Discord Data Tracked</h1>
+                <h2>Message Content and Message Attachments</h2>
+                    <p>The bot will read this data at any time a Message is a) Sent to Discord; b) Edited by the sending user; The bot does this in order to process AutoModeration requests used by the Guild the Message was sent to.
+                    </p>                    
+                    <p>The Guild may change the settings to this feature, for their specific Guild at any time they see fit.
+                    </p>
+
+            <h1>Basic User Data</h1>
+                <p>The bot will read basic User Data during certain commands that require a user as an Input Method, for example kick or ban, so that the bot can take the appropriate action on the user.
+                </p>            
+                <p>When the report command is used, the bot will send a request to the Bot Staff Team (no non-staff members can access this). This request will contain the ID and Username of both the Reported User and Reporter.
+                </p>            
+                <p>When running the whois command, the bot will display more information about the user (who's ID is provided as a command argument). This information may include the user's avatar, if any is set, the Public Flags associated with their account, for example, HypeSquad Badges and Nitro status, and the time of the user's account creation.
+                </p>
+    
+            <h1>Discord Data Stored</h1>
+                <h2>Basic User Data</h2>
+                    <p>The bot will store the IDs of the Globally Banned user(s), and the IDs of the Bot Staff Member who added said user to the list (for tracking purposes). The bot will also store a URL to the image(s) used as a proof method for Globally Banning this User. A User may also have numerous infractions added to their ban. Each infraction will require a separate appeal.</p>
+                    <p>Unlike the previous version of this bot, we (The Bot Staff Team) will be very strict when adding a user to the Global Banlist, as to prevent as much abuse as possible.</p>
+                    <p>As the service provided is a Global Banlist bot, a Globally Banned User will require to Appeal for breaking the Discord Terms of Service and/or Community Guidelines, in order for their Discord Data to be removed from our Systems. As previously stated, we will be very strict about this, and the user must be sincerely regretful of their actions to have their data removed.</p>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.webp" alt="TotalBan Logo" class="footer-img">
+                    <p class="copyright">© 2024 TotalBan. All rights reserved.</p>
+                </div>
+                <nav class="footer-links">
+                    <a href="legal.html">Legal</a>
+                </nav>
+                <div class="social-links">
+                    <a href="https://discord.gg/puzjdKHH35" class="discord-btn" aria-label="Join our Discord">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                        </svg>
+                        <span>Discord</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const burger = document.querySelector('.burger input');
+                const navMenu = document.querySelector('.pages');
+                const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+
+                // Burger menu functionality
+                if (burger && navMenu) {
+                    burger.addEventListener('change', function() {
+                        if (this.checked) {
+                            navMenu.classList.add('active');
+                        } else {
+                            navMenu.classList.remove('active');
+                        }
+                    });
+                } else {
+                    console.error('Burger menu or navigation menu not found');
+                }
+
+                // Theme toggle functionality
+                function switchTheme(e) {
+                    if (e.target.checked) {
+                        document.documentElement.setAttribute('data-theme', 'dark');
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        document.documentElement.setAttribute('data-theme', 'light');
+                        localStorage.setItem('theme', 'light');
+                    }
+                }
+
+                // Add event listener for theme toggle switch
+                if (toggleSwitch) {
+                    toggleSwitch.addEventListener('change', switchTheme, true);
+                } else {
+                    console.error('Theme toggle switch not found');
+                }
+
+                // Check for saved theme and apply it
+                const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light';
+                document.documentElement.setAttribute('data-theme', currentTheme);
+
+                // Ensure the switch reflects the correct theme status
+                if (currentTheme === 'dark' && toggleSwitch) {
+                    toggleSwitch.checked = true;
+                } else if (currentTheme === 'light' && toggleSwitch) {
+                    toggleSwitch.checked = false;
+                }
+            });
+        </script>
     </body>
 </html>
